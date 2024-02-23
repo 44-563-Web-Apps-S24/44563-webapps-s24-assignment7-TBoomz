@@ -32,6 +32,24 @@
             border-radius: 5px;
         }
 
+        .game-field {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+        }
+
+        .location {
+            width: 100%;
+            padding: 10px;
+            background-color: #ddd;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
     </style>
 </head>
 
@@ -43,6 +61,57 @@
 
     <main class="container">
         <p>Click on the locations to find coins, beware the monster</p>
+
+        <div class="game-field">
+            <!-- Row 1 -->
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+            <div class="location"><img src="coin.jpg" alt="Coin"></div>
+            <div class="location"><img src="fancier_coin.jpg" alt="Fancier Coin"></div>
+            <div class="location"><img src="monster.jpg" alt="Monster"></div>
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+
+            <!-- Row 2 -->
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+            <div class="location"><img src="coin.jpg" alt="Coin"></div>
+            <div class="location"><img src="fancier_coin.jpg" alt="Fancier Coin"></div>
+            <div class="location"><img src="monster.jpg" alt="Monster"></div>
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+
+            <!-- Row 3 -->
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+            <div class="location"><img src="coin.jpg" alt="Coin"></div>
+            <div class="location"><img src="fancier_coin.jpg" alt="Fancier Coin"></div>
+            <div class="location"><img src="monster.jpg" alt="Monster"></div>
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+
+            <!-- Row 4 -->
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+            <div class="location"><img src="coin.jpg" alt="Coin"></div>
+            <div class="location"><img src="fancier_coin.jpg" alt="Fancier Coin"></div>
+            <div class="location"><img src="monster.jpg" alt="Monster"></div>
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+
+            <!-- Row 5 -->
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+            <div class="location"><img src="coin.jpg" alt="Coin"></div>
+            <div class="location"><img src="fancier_coin.jpg" alt="Fancier Coin"></div>
+            <div class="location"><img src="monster.jpg" alt="Monster"></div>
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+
+            <!-- Row 6 -->
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+            <div class="location"><img src="coin.jpg" alt="Coin"></div>
+            <div class="location"><img src="fancier_coin.jpg" alt="Fancier Coin"></div>
+            <div class="location"><img src="monster.jpg" alt="Monster"></div>
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+
+            <!-- Row 7 -->
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+            <div class="location"><img src="coin.jpg" alt="Coin"></div>
+            <div class="location"><img src="fancier_coin.jpg" alt="Fancier Coin"></div>
+            <div class="location"><img src="monster.jpg" alt="Monster"></div>
+            <div class="location"><img src="building.jpg" alt="Building"></div>
+        </div>
 
         <div id="locations" class="alert alert-info">Number of locations checked is zero.</div>
         <div id="score" class="alert alert-success">Score is zero.</div>
