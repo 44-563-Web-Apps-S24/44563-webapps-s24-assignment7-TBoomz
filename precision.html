@@ -16,33 +16,33 @@
     <button onclick="recordTime()">Stop Timer</button>
 
     <script>
-        let stopTime = undefined;
+      let stopTime = undefined;
 
-        function recordTime() {
-            stopTime = Date.now();
-            console.log(stopTime);
+      function recordTime() {
+          stopTime = Date.now();
+          console.log(stopTime);
+      }
+
+      // Set onclick property of the stop button
+      document.querySelector("button:nth-of-type(2)").onclick = recordTime;
+
+      function startTime() {
+          for (let i = 0; i < 4; i++) {
+              setTimeout(() => {
+                  document.getElementById("counter").innerHTML = "Count: " + (4 - i);
+              }, i * 1000);
+          }
+
+          // Check user's precision
+          setTimeout(() => {
+              if (stopTime === undefined) {
+                  document.getElementById("target").innerHTML = "Too Slow";
+              } else {
+                  let elapsedTime = Date.now() - stopTime;
+                  document.getElementById("target").innerHTML = "Time was " + elapsedTime + " milliseconds";
+              }
+          }, 4000); 
         }
-
-        // Set onclick property of the stop button
-        document.querySelector("button:nth-of-type(2)").onclick = recordTime;
-
-        function startTime() {
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    document.getElementById("counter").innerHTML = "Count: " + i;
-                }, (4 - i) * 1000);
-            }
-
-            // Check user's precision
-            setTimeout(() => {
-                if (stopTime === undefined) {
-                    document.getElementById("target").innerHTML = "Too Slow";
-                } else {
-                    let elapsedTime = stopTime - Date.now() + 4000;
-                    document.getElementById("target").innerHTML = "Time was " + elapsedTime + " milliseconds";
-                }
-            }, 4000);
-        }
-    </script>
-</body>
+     </script>
+  </body>
 </html>
