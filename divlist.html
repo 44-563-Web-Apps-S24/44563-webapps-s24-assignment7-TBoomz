@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<meta charset="UTF-8">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  		<title>Div List Builder</title>
+	<style>
+    .flex-container {
+     	display: flex;  flex-direction:row;
+     	background-color: red;
+  	}
+
+	.flex-container > div {  /*div children of the flex container*/
+ 		background-color: #f1f1f1; 
+  		margin: 10px;  padding: 20px;  font-size: 30px;
+	}
+
+	/* Responsive layout */
+	@media (max-width: 600px) { 
+		.flex-container{
+			flex-direction:column;
+			background-color: green;
+	 	 }
+	}
+</style>
+</head>
+
+<body>
+	<h2>Kylie Bales Builds List with Divs</h2>
+
+	<input type="text" id="inputText" placeholder="Enter text">
+
+  <button onclick="addEnd()">Add end</button>
+  <button onclick="addFront()">Add front</button>
+  <button onclick="remove()">Remove</button>
+
+  <div class="flex-container">
+    <div class="divlist">Initial Item 1</div>
+    <div class="divlist">Initial Item 2</div>
+    <div class="divlist">Initial Item 3</div>
+  </div>
+
+  <script>
+    function addEnd() {
+      const container = document.querySelector('.flex-container');
+      const inputValue = document.getElementById('inputText').value;
+
+      const newElement = document.createElement('div');
+      newElement.innerHTML = inputValue;
+      newElement.className = 'divlist';
+
+      container.appendChild(newElement);
+    }
+
+    function addFront() {
+      const container = document.querySelector('.flex-container');
+      const inputValue = document.getElementById('inputText').value;
+
+      const newElement = document.createElement('div');
+      newElement.innerHTML = inputValue;
+      newElement.className = 'divlist';
+
+      container.insertBefore(newElement, container.firstChild);
+    }
+
+    function remove() {
+      const divListItems = document.getElementsByClassName('divlist');
+      const length = divListItems.length;
+
+      if (length > 0) {
+        const middleIndex = Math.floor(length / 2);
+        divListItems[middleIndex].remove();
+      }
+    }
+  </script>
+</body>
+</html>	
